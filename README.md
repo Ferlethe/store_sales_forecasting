@@ -89,6 +89,8 @@ The workflow is divided into five main stages:
 * Oil price shows an **inverse relationship** with sales, likely tied to Ecuador's oil-dependent economy
 * **Lag and rolling mean features** were the strongest predictors in the final model — recent sales history drives forecasting accuracy more than any other variable
 
+![Total Sales vs Oil Price](images/sales_vs_oil.png)
+
 ---
 
 ## Model Performance
@@ -102,6 +104,10 @@ The workflow is divided into five main stages:
 * **Best Model:** Random Forest Regressor (tuned)
 * **Final Validation RMSLE:** 0.5715
 * Validation was done using a **time-based split** (not random), respecting chronological order to avoid data leakage
+
+![Predicted vs Actual Sales](images/predicted_vs_actual.png)
+
+**Business takeaway:** the results show that recent sales history (lag and rolling mean features) is significantly more important than external variables like oil prices for predicting short-term sales. This suggests that for operational forecasting — such as inventory and staffing decisions — recent sales trends per store and product family should be the primary signal, with external economic factors playing a secondary role.
 
 ---
 
